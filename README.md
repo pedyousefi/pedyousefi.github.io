@@ -20,7 +20,9 @@ Computer vision
 
 # Publications
 
-* Yousefi, Pedram, Bilge Gunsel, and Yusuf Kagan Hanoglu. **"Vehicle Crowd Density Estimation Enhanced by Video Flow Maps."** In *2023 14th International Conference on Electrical and Electronics Engineering (ELECO)*, 1–5. IEEE, 2023.
+* Yousefi, Pedram. **"Crowd Localization and Counting via Deep Flow Maps."** *M.S. thesis, Istanbul Technical University, July 2024*.
+
+* Yousefi, Pedram, Bilge Gunsel, and Yusuf Kagan Hanoglu. **"Vehicle Crowd Density Estimation Enhanced by Video Flow Maps."** In *2023 14th International Conference on Electrical and Electronics Engineering (ELECO)*, 1–5. IEEE, 2023. [official link](http://www.eleco.org.tr/ELECO2023/eleco2023-papers/103.pdf)
 
 
 # Contact
