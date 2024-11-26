@@ -28,4 +28,4 @@ CANnet2s
 
 **Personal Email:** pedramyousefi39@gmail.com
 
-**Linkedin:** (linkedin.com/in/pedram-yousefi-9b2139197/)
+**Linkedin:** [Linkedin](linkedin.com/in/pedram-yousefi-9b2139197/)
