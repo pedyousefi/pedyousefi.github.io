@@ -3,6 +3,7 @@ I'm Pedram. I recently graduated with a Master's degree from Istanbul Technical 
 
 ## Education
 **MSc.** Telecommunications Engineering (ITU)
+
 **BSc.** Electrical and Electronics Engineering (QIAU)
           
 
