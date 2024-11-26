@@ -30,7 +30,7 @@ Here you can see my TOEL iBT test score.
 
 Test Date: November 22nd, 2023
 
-/assets/img/toefl_score.png
+![Score](/assets/img/toefl_score.png)
 
 
 # Contact
