@@ -25,5 +25,7 @@ CANnet2s
 ## Contact
 
 **Academic Email:** yousefi21@itu.edu.tr
+
 **Personal Email:** pedramyousefi39@gmail.com
+
 **Linkedin:** linkedin.com/in/pedram-yousefi-9b2139197/
