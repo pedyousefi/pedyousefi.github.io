@@ -24,7 +24,7 @@ Python - C - C++ - Java - MATLAB - OMNeT++ - Proteus - Verilog
   - [Increasing network performance using transfer learning](#increasing-network-performance-using-transfer-learning)
   - [Estimating and localizing both vehicles and pedestrians (Multi-object)](#estimating-and-localizing-both-vehicles-and-pedestrians-multi-object)
   - [Reducing false-positives and localizing more than 2 objects](#reducing-false-positives-and-localizing-more-than-2-objects-current-research) (Current research)
-- **Networks:** [5G network performance and QoE estimation using machine learning](#estimating-video-streaming-qoe-in-the-5g-networks1)
+- **Networks:** [5G network performance and QoE estimation using machine learning](#estimating-video-streaming-qoe-in-the-5g-networks*)
 
 ## Road scene analysis using deep learning and computer vision
 
@@ -77,7 +77,7 @@ For this purpose we went through all the available WAYMO segments, and extracted
 
 ### Reducing false-positives and localizing more than 2 objects (CURRENT RESEARCH)
 
-## Estimating Video Streaming QoE in the 5G networks[1]
+## Estimating Video Streaming QoE in the 5G networks\*
 
 Estimating and evaluating the performance of the network for a mobile video streaming use case using 5G network’s analytics functionality implemented with OMNeT++ in combination with INET and SimuLTE frameworks. Analysis of the 5G NWDAF gathered network performance data such as Uplink and Downlink traffic, number of transmitted and retransmitted packets, and radio quality conditions per user equipment using machine learning techniques such as F-test, MIR and PCA. At the first phase, a network is defined and implemented in OMNeT++ and SimuLTE is used to generate user plane traffic in this mobile network. This network consists of a single access node (AN) connected to the gateway (PWG). The access node is connected to a video server which provides a video with the length of 300 seconds, split into segments of 5 seconds duration with three different quality levels having bitrates of 500 Kbps, 1500 Kbps, and 3000 Kbps, corresponding to 560p (SD), 720p (HD) and 1080p (FULL HD) video qualities, respectively. 
 
@@ -88,7 +88,7 @@ In this simulation number of active video clients (UEs) increases from initial n
 ![graphs](/assets/network2.PNG)
 
 
-[1] *This is an implementation of the network proposed in the paper by Schwarzmann, S., Cassales Marquezan, C.,
+\* *This is an implementation of the network proposed in the paper by Schwarzmann, S., Cassales Marquezan, C.,
 Bosk, M., Liu, H., Trivisonno, R., & Zinner, T titled “Estimating Video Streaming QoE in the 5G
 Architecture Using Machine Learning". This implementation was presented as a term project for the Network planning and
 management course during my masters degree. Network presented in the figure and the results are mine and are different from results presented in the original paper.*
