@@ -104,7 +104,7 @@ In real-life scenarios, specifically in the environment surrounding a vehicle in
 
 ![can2_2obj](/assets/can2_2obj.PNG)
 
-### Reducing false-positives and localizing more than 2 objects (CURRENT RESEARCH)
+### Reducing false-positives and localizing more than 2 objects (Current research)
 
 Based on the promising results seen in the case of 2-object crowd estimation, a third target object was added to the list of objects the network is trained on for the purpose of density estimation. The third object is "Bicycle", which can be seen in various WAYMO images. Parallel to this, we are currently trying to add more WAYMO segments to the pool of selected video sequences used in training and testing. Also, to decrease the error rate even more, augmentation techniques are being employed to further increase the network accuracy.
 
