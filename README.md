@@ -27,7 +27,7 @@ Estimating and evaluating the performance of the network for a mobile video stre
 In this simulation number of active video clients (UEs) increases from initial number of 20 UEs to 200 UEs, randomly placed around the access node. Each UE initially receives the SD video quality, with a buffer length of 30 seconds, each user is able to reach to the highest possible video streaming quality within a very short time, however, as the number of UEs increases, the required time for each UE to be able to switch to a higher streaming quality increase, also increase in number of UEs, decreases the received video bitrate.  Figures below show the schematic of the network implemented in OMNeT++ and a graph showing the comparison between received video bitrate for a network with 40 UEs compared to a another one with 200 UEs.
 
 
-[*] *This is an implementation of the network proposed in the paper by Schwarzmann, S., Cassales Marquezan, C.,
+- *This is an implementation of the network proposed in the paper by Schwarzmann, S., Cassales Marquezan, C.,
 Bosk, M., Liu, H., Trivisonno, R., & Zinner, T titled “Estimating Video Streaming QoE in the 5G
 Architecture Using Machine Learning". This implementation was presented as a term project for the Network planning and
 management course during my masters degree. Network presented in the figure and the results are mine and are different from results presented in the original paper.*
