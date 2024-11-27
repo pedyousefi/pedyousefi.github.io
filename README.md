@@ -51,6 +51,14 @@ The contextual features then are passed to the back-end of the network where the
 
 ### Network kernel modifications
 
+The MAE error rate showed by CANnet on TRANCOS test set showed that this network is not able to successfully locate and estimate the number of all vehicles present at the images, therefore a modification was applied to the network kernels, specifically kernels with different scales belonging to the contextual module. Image below demonstrates these changes.
+
+![can_kernels](/assets/can_kernels.PNG)
+
+After this modification, CANnet was once again tested on the TRANCOS data, this time however, with the new kernel sizes the network was able to demonstrate impressive MAE error rate of 2.1. Figure below shows the visual network performance after this modification.
+
+![can_tranctest](/assets/can_tranctest.PNG)
+
 ### WAYMO cars dataset categorization and adaptation
 
 ### Video-based road scene analysis (Temporal domain)
