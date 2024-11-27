@@ -22,8 +22,8 @@ Python - C - C++ - Java - MATLAB - OMNeT++ - Proteus - Verilog
   - [WAYMO cars dataset categorization and adaptation](#waymo-cars-dataset-categorization-and-adaptation)
   - [Video-based road scene analysis (Temporal domain)](#video-based-road-scene-analysis-(temporal-domain))
   - [Increasing network performance using transfer learning](#increasing-network-performance-using-transfer-learning)
-  - [Estimating and localizing both vehicles and pedestrians (Multi object)](#estimating-and-localizing-both-vehicles-and-pedestrians-(multi-object))
-  - [Reducing false positives and localizing more than 2 objects](#reducing-false-positives-and-localizing-more-than-2-objects-(current-research))(CURRENT RESEARCH)
+  - [Estimating and localizing both vehicles and pedestrians (Multi object)](#estimating-and-localizing-both-vehicles-and-pedestrians-multi-object)
+  - [Reducing false positives and localizing more than 2 objects](#reducing-false-positives-and-localizing-more-than-2-objects-current-research) (Current research)
 - **Networks:** [5G network performance and QoE estimation using machine learning](#estimating-video-streaming-qoe-in-the-5g-networks1)
 
 ## Road scene analysis using deep learning and computer vision
