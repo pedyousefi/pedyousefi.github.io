@@ -26,9 +26,23 @@ Python - C - C++ - Java - MATLAB - OMNeT++ - Proteus - Verilog
   - Reducing false-positives and localizing more than 2 objects (CURRENT RESEARCH)
 - **Networks:** [5G network performance and QoE estimation using machine learning](#estimating-video-streaming-qoe-in-the-5g-networks1)
 
-### Road scene analysis using deep learning and computer vision
+## Road scene analysis using deep learning and computer vision
 
-### Estimating Video Streaming QoE in the 5G networks[1]
+### Single frame crowd counting and estimation (Spatial domain)
+
+### Network kernel modifications
+
+### WAYMO cars dataset categorization and adaptation
+
+### Video-based road scene analysis (Temporal domain)
+
+### Increasing network performance using transfer learning
+
+### Estimating and localizing both vehicles and pedestrians (Multi-object)
+
+### Reducing false-positives and localizing more than 2 objects (CURRENT RESEARCH)
+
+## Estimating Video Streaming QoE in the 5G networks[1]
 
 Estimating and evaluating the performance of the network for a mobile video streaming use case using 5G network’s analytics functionality implemented with OMNeT++ in combination with INET and SimuLTE frameworks. Analysis of the 5G NWDAF gathered network performance data such as Uplink and Downlink traffic, number of transmitted and retransmitted packets, and radio quality conditions per user equipment using machine learning techniques such as F-test, MIR and PCA. At the first phase, a network is defined and implemented in OMNeT++ and SimuLTE is used to generate user plane traffic in this mobile network. This network consists of a single access node (AN) connected to the gateway (PWG). The access node is connected to a video server which provides a video with the length of 300 seconds, split into segments of 5 seconds duration with three different quality levels having bitrates of 500 Kbps, 1500 Kbps, and 3000 Kbps, corresponding to 560p (SD), 720p (HD) and 1080p (FULL HD) video qualities, respectively. 
 
