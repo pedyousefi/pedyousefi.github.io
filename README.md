@@ -30,9 +30,24 @@ Python - C - C++ - Java - MATLAB - OMNeT++ - Proteus - Verilog
 
 Understanding the location, distribution pattern, and characteristics of crowds, along
 with the number of objects within a specific space, constitutes a critical subject known
-as crowd analysis. In the case of research done by us, we substuted "People" by "Vehicles" as the target objects, hence adapting this method to the area of vehicle crowd analysis and counting within frames captured from roads and streets. Details of our research can be found in the following sections.
+as crowd analysis. In this process the network passes each input frame through convolutional layers and generates a color-coded map, called as the "Density Map" which is a representation of objects' location whithin each scene. An example of such a map can be seen below. In the case of research done by us, we substuted "People" by "Vehicles" as the target objects, hence adapting this method to the area of vehicle crowd analysis and counting within frames captured from roads and streets. Details of our research can be found in the following sections.
+
+![perf](/assets/perf_example.PNG)
 
 ### Single frame crowd counting and estimation (Spatial domain)
+
+My initial experience with CNN-based crowd counting networks relates to a term project I done for the statistical pattern recognition course during my masters’ degree. In that term project I worked with the famous CSRnet deep neural network which was state of the art at the time, after that due to my self interest in that area, I focused on the CANnet, which is a scale-aware neural net, to further familiarize myself with the workings of these networks, I trained multiple models using datasets such as ShanghaiTech, FDST, Venice, JHU-Crowds, UCSD and etc, which all are people crowd counting datasets. Understanding the abilities of CANnet, I implemented the TRANCOS cars dataset, which provides highway CCTV frames, using this dataset to count and estimate numbers of cars within each scene, reaching to a MAE error rate of 2.82. Image below shows the CANnet architecture, which depicts the VGG-16 layers at the front-end and the convolutional layers at the back-end, and the contextual scale-aware module in the middle. 
+
+![can_arch](/assets/can_detail_1.PNG)
+
+The contextual module is responsible for processing extracted VGG features at different scales and finding the saliency details in each input image. As can be seen in figure below, the feature goes through a process of pooling, upsampling and sigmoid operations.
+
+![can_mods](/assets/can_detail_2.PNG)
+
+The contextual features then are passed to the back-end of the network where the each feature is passed through convolutional layers which at the end a density map whith dots representing center point of each target object is generated. This process is shown in the image below.
+
+![can_convs](/assets/can_detail_3.PNG)
+
 
 ### Network kernel modifications
 
