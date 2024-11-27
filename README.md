@@ -9,7 +9,9 @@ I'm Pedram. I recently graduated with a Master's degree from Istanbul Technical 
 **BSc.** Electrical and Electronics Engineering (QIAU)
 
 
+# Skills
 
+Python - C - C++ - Java - MATLAB - OMNeT+ - Proteus - Verilog
           
 
 # Research
