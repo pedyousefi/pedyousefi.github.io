@@ -29,7 +29,7 @@ In this simulation number of active video clients (UEs) increases from initial n
 
 ![network](/assets/network1.PNG)
 
-![graphs](/assets/netowork2.PNG)
+![graphs](/assets/network2.PNG)
 
 
 [1] *This is an implementation of the network proposed in the paper by Schwarzmann, S., Cassales Marquezan, C.,
