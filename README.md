@@ -15,7 +15,9 @@ Python - C - C++ - Java - MATLAB - OMNeT+ - Proteus - Verilog
           
 
 # Research
-Computer vision
+
+* **Deep Learning & Computer Vision:** Vehicle crowd analysis and density estimation
+* **Networks:** 5G network performance and QoE estimation using machine learning
 
 
 
