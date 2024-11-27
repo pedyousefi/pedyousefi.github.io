@@ -36,7 +36,7 @@ as crowd analysis. In this process the network passes each input frame through c
 
 ### Single frame crowd counting and estimation (Spatial domain)
 
-My initial experience with CNN-based crowd counting networks relates to a term project I done for the statistical pattern recognition course during my masters’ degree. In that term project I worked with the famous CSRnet deep neural network which was state of the art at the time, after that due to my self interest in that area, I focused on the CANnet, which is a scale-aware neural net, to further familiarize myself with the workings of these networks, I trained multiple models using datasets such as ShanghaiTech, FDST, Venice, JHU-Crowds, UCSD and etc, which all are people crowd counting datasets. Understanding the abilities of CANnet, I implemented the TRANCOS cars dataset, which provides highway CCTV frames, using this dataset to count and estimate numbers of cars within each scene, reaching to a MAE error rate of 2.82. Image below shows the CANnet architecture, which depicts the VGG-16 layers at the front-end and the convolutional layers at the back-end, and the contextual scale-aware module in the middle. 
+My initial experience with CNN-based crowd counting networks relates to a term project I done for the statistical pattern recognition course during my masters’ degree. In that term project I worked with the famous CSRnet deep neural network which was state of the art at the time, after that due to my self interest in that area, I focused on the CANnet, which is a scale-aware neural net, to further familiarize myself with the workings of these networks, I trained multiple models using datasets such as ShanghaiTech, FDST, Venice, JHU-Crowds, UCSD and etc, which all are people crowd counting datasets. Understanding the abilities of CANnet, I implemented the [TRANCOS](https://gram.web.uah.es/data/datasets/trancos/index.html) cars dataset, which provides highway CCTV frames, using this dataset to count and estimate numbers of cars within each scene, reaching to a MAE error rate of 2.82. Image below shows the CANnet architecture, which depicts the VGG-16 layers at the front-end and the convolutional layers at the back-end, and the contextual scale-aware module in the middle. 
 
 ![can_arch](/assets/can_detail_1.PNG)
 
@@ -60,6 +60,14 @@ After this modification, CANnet was once again tested on the TRANCOS data, this 
 ![can_tranctest](/assets/can_trantest.PNG)
 
 ### WAYMO cars dataset categorization and adaptation
+
+Due to limitations of the TRANCOS dataset such as image resolution and quality, camera point-of-view, limited number of training and test images, and due to the fact that this dataset was not originally developed for the usage in projects with the purpose of autonomous vehicles as the target domain, we turned our focus to the comprehensive [WAYMO](https://waymo.com/open/) cars dataset, which provides video sequences of onboard autonomous vehicle road images, captured using LiDAR equipment and provides 360 degree scene environment. In order to adapt the crowd counting networks to the domain of autonomous vehicles, we implemented the video-based counterpart of the CAnnet, CANnet2s, which is capable of estimating the flow of objects within frame pairs and is able to generate flow maps as well as scene density map and estimate the number of object within a scene. Samples of input frames from WAYMO dataset used by these neural networks are presented in figure below.
+
+![waymo_frames](/assets/waymo_frames.PNG)
+
+For this purpose we went through all the available WAYMO segments, and extracted "Front camera" frames. Totalling more thatn 140 segments and 28000 frames. One-third of this number of frames were used for the training and the remaining were used for testing of both CANnet and CANnet2s. Furthermore, to better understand the content of the WAYMO images and to better evaluate the performance of networks under various scenes we labeled each segment of the dataset in 7 different general categories, as "Bright", "Dark", "Occlusion", "Pose change", "Low density", "Blurry", and "Multi-scale". Examples of labled WAYMO input frames can be seen below.
+
+![waymo_cat](/assets/waymo_cat.PNG)
 
 ### Video-based road scene analysis (Temporal domain)
 
