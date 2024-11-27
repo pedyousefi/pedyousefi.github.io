@@ -100,7 +100,15 @@ To further decrease the CANnet2s network error rate, a transfer-learning method 
 
 ### Estimating and localizing both vehicles and pedestrians (Multi-object)
 
+In real-life scenarios, specifically in the environment surrounding a vehicle in the road, specially in front of the car, obstacles and objects and other than vehicles can be seen, most important one of those objects are pedestrians, which is the most important object which a driver has to be cautious about; therefore, another aspect of this study was introduced which combines the detection and estimation of the vehicles and pedestrians crowds within a scene. Due to the fact that most WAYMO scenes include both object types, we generated groun-truth density maps including both of these target onjects and prompted to train the network from scratch using frames that showcased these objects. Images below depict the network performance when tested on input frames. It can be seen that the network is able to successfully detect and estimate the target objects' whitin the scene as was desired.
+
+![can2_2obj](/assets/can2_2obj.PNG)
+
 ### Reducing false-positives and localizing more than 2 objects (CURRENT RESEARCH)
+
+Based on the promising results seen in the case of 2-object crowd estimation, a third target object was added to the list of objects the network is trained on for the purpose of density estimation. The third object is "Bicycle", which can be seen in various WAYMO images. Parallel to this, we are currently trying to add more WAYMO segments to the pool of selected video sequences used in training and testing. Also, to decrease the error rate even more, augmentation techniques are being employed to further increase the network accuracy.
+
+![can2_over](/assets/can2_over.PNG)
 
 ## Estimating Video Streaming QoE in the 5G networks\*
 
