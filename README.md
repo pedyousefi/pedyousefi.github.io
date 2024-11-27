@@ -17,13 +17,13 @@ Python - C - C++ - Java - MATLAB - OMNeT++ - Proteus - Verilog
 # Research
 
 - **Deep Learning & Computer Vision:** [Vehicle and pedestrian crowd analysis and density estimation](#road-scene-analysis-using-deep-learning-and-computer-vision)
-  - Single frame crowd counting and estimation (Spatial domain)
-  - Network kernel modifications
-  - WAYMO cars dataset categorization and adaptation
-  - Video-based road scene analysis (Temporal domain)
-  - Increasing network performance using transfer learning
-  - Estimating and localizing both vehicles and pedestrians (Multi-object)
-  - Reducing false-positives and localizing more than 2 objects (CURRENT RESEARCH)
+  - [Single frame crowd counting and estimation (Spatial domain)](#single-frame-crowd-counting-and-estimation-(spatial-domain))
+  - [Network kernel modifications](#network-kernel-modifications)
+  - [WAYMO cars dataset categorization and adaptation](#waymo-cars-dataset-categorization-and-adaptation)
+  - [Video-based road scene analysis (Temporal domain)](#video-based-road-scene-analysis-(temporal-domain))
+  - [Increasing network performance using transfer learning](#increasing-network-performance-using-transfer-learning)
+  - [Estimating and localizing both vehicles and pedestrians (Multi-object)](#estimating-and-localizing-both-vehicles-and-pedestrians-(multi-object))
+  - [Reducing false-positives and localizing more than 2 objects (CURRENT RESEARCH)](#reducing-false-positives-and-localizing-more-than-2-objects-(current-research))
 - **Networks:** [5G network performance and QoE estimation using machine learning](#estimating-video-streaming-qoe-in-the-5g-networks1)
 
 ## Road scene analysis using deep learning and computer vision
