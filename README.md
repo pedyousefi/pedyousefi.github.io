@@ -71,6 +71,10 @@ For this purpose we went through all the available WAYMO segments, and extracted
 
 ### Video-based road scene analysis (Temporal domain)
 
+The video-sequence-based counterpart of the CANnet is called the CANnet2s is used for the purpose of training a model for road scene analysis and density estimation using the WAYMO frames. This network has an architecture very similar to that of the CANnet, however, instead of processing single images, this network inputs a frame pair, and the network passes each frame to one of its two parallel covolutional layers, as can be seen in the figure below. It is evident that the network process each frame, and passes the extracted contextual features to the back-end; however, on contrast to the CANnet, this network generates intermediatory grid-based density maps and by detecting differences in objects' locations whithin frames, the network estimates the object flows, hence generating 10 different flow maps in each corresponding directions and by averaging all the flows, the network reaches to a single estimated density map, similar to those seen in the output of networks such as CSRnet or CANnet.
+
+![can2_arch](/assets/can2_arch.PNG)
+
 ### Increasing network performance using transfer learning
 
 ### Estimating and localizing both vehicles and pedestrians (Multi-object)
