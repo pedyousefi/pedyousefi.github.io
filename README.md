@@ -81,9 +81,9 @@ Supriority of CANnet2s compared to CANnet can be seen both in training and testi
 To better compare the two networks' performance when tested on WAYMO test set, three different evaluation metrics, MAE, RMSE and PSNR are considered. Tables below show networks' evaluation comparison. First table shows total network performance, however, the second table shows performance of each network corresponding to various scene categories.
 
 **| Network      | MAE  | RMSE |PSNR   |**
-|:-------------|:------------|:------|
-| CANnet2s     | 5.46 | 6.13 |32.4 dB|
-| CANnet       | 7.74 | 8.45 |29.5 dB|
+  |:-------------|:------------|:------|
+  | CANnet2s     | 5.46 | 6.13 |32.4 dB|
+  | CANnet       | 7.74 | 8.45 |29.5 dB|
 
 
 ### Increasing network performance using transfer learning
