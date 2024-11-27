@@ -17,7 +17,7 @@ Python - C - C++ - Java - MATLAB - OMNeT++ - Proteus - Verilog
 # Research
 
 - **Deep Learning & Computer Vision:** [Vehicle and pedestrian crowd analysis and density estimation](#road-scene-analysis-using-deep-learning-and-computer-vision)
-  - [Single frame crowd counting and estimation (Spatial domain)](#single-frame-crowd-counting-and-estimation-(spatial-domain))
+  - [Single frame crowd counting and estimation (Spatial domain)](#single-frame-crowd-counting-and-estimation-spatial-domain)
   - [Network kernel modifications](#network-kernel-modifications)
   - [WAYMO cars dataset categorization and adaptation](#waymo-cars-dataset-categorization-and-adaptation)
   - [Video-based road scene analysis (Temporal domain)](#video-based-road-scene-analysis-temporal-domain)
