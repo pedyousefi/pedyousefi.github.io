@@ -28,6 +28,10 @@ Python - C - C++ - Java - MATLAB - OMNeT++ - Proteus - Verilog
 
 ## Road scene analysis using deep learning and computer vision
 
+Understanding the location, distribution pattern, and characteristics of crowds, along
+with the number of objects within a specific space, constitutes a critical subject known
+as crowd analysis. In the case of research done by us, we substuted "People" by "Vehicles" as the target objects, hence adapting this method to the area of vehicle crowd analysis and counting in frames captured from roads and streets. Details of our research can be found in the following sections.
+
 ### Single frame crowd counting and estimation (Spatial domain)
 
 ### Network kernel modifications
