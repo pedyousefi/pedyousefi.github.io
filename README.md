@@ -93,6 +93,11 @@ Image below visualizes the CANnet2s performance on one of the most challenging W
 
 ### Increasing network performance using transfer learning
 
+To further decrease the CANnet2s network error rate, a transfer-learning method was implemented, using a pre-trained TRANCOS model as the base for training the network with WAYMO data. As a result, model was improved and the accuracy of the network was enhances. Image below shows a visualization of this improvement based on the network performance on a "Blurry" WAYMO scene, presenting a foggy environment with cars on the road creating a highly occluded scene; however, as it can be seen, MAE error rate of the network is decreased from 8.14 before transfer learning, to MAE value of 0.14 after transfer-learning.
+
+![can_tlearn](/assets/can_tlearn.PNG)
+
+
 ### Estimating and localizing both vehicles and pedestrians (Multi-object)
 
 ### Reducing false-positives and localizing more than 2 objects (CURRENT RESEARCH)
