@@ -19,6 +19,10 @@ Python - C - C++ - Java - MATLAB - OMNeT+ - Proteus - Verilog
 * **Deep Learning & Computer Vision:** Vehicle and pedestrian crowd analysis and density estimation
 * **Networks:** 5G network performance and QoE estimation using machine learning
 
+## Road scene analysis using deep learning and computer vision
+
+## Estimating Video Streaming QoE in the 5G networks
+
 
 
 
