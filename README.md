@@ -87,6 +87,9 @@ To better compare the two networks' performance when tested on WAYMO test set, t
 
 ![cans_tab](/assets/cans_tab.PNG)
 
+Image below visualizes the CANnet2s performance on one of the most challenging WAYMO scenes, captured at night and whithin the scene 2 vehicles can be seen. It can be understood that density map estimated by the network is almost identical to the ground-truth density map (GT), which demonstrates the fact that the network is able to perform at its maximum even in challenging scenes.
+
+![can2_night](/assets/can2_night.PNG)
 
 ### Increasing network performance using transfer learning
 
