@@ -57,7 +57,7 @@ The MAE error rate showed by CANnet on TRANCOS test set showed that this network
 
 After this modification, CANnet was once again tested on the TRANCOS data, this time however, with the new kernel sizes the network was able to demonstrate impressive MAE error rate of 2.1. Figure below shows the visual network performance after this modification.
 
-![can_tranctest](/assets/can_tranctest.PNG)
+![can_tranctest](/assets/can_trantest.PNG)
 
 ### WAYMO cars dataset categorization and adaptation
 
