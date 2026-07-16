@@ -43,6 +43,9 @@ This section includes my research work in the area of computer vision and image 
 ### Improving CSRNet and adapting it to remote sensing datasets
 Enhacing and modifying the simple CSRNet which is a CNN-based network by adding scale-aware and attention modules to the network architecture to further improve its performance. The scale-aware module includes 3 dilated convolutional layers, and the attention module comprises both channel attention and spatial attention. Table shown below demonstrates the difference between the modified network architecture and the baseline CSRNet. This modification increased the number of learnable parameters from approximately 16 million parameters, to 21 million parameters. This modification resulted in an improved performance on remote sensing datasets RSOC and VisDrone-DET. Network performance on RSOC satellite data for object detection can be seen below.
 
+![perf](/assets/csr_tab.JPG)
+![perf](/assets/csr_rsoc.JPG)
+
 ### Hyperspectral data: Semi-supervised segmentation
 Python implementation of the graph-based semi-supervised segmentation abd labeling method proposed in the [paper](https://ieeexplore.ieee.org/abstract/document/7899852), which employs barycentric graph embedding to solve a laplacian-based linear system to classify and label images through a nearest-neighbor rule. In this project, the Indian Pines and Washington DC Mall datasets which are captured by AVIRIS and HYDICE sensors are used and various spectral bands are analyzed and labeled.
 
