@@ -17,8 +17,8 @@ Python - C - C++ - Java - MATLAB - OMNeT++ - Proteus - Verilog
 # Research
 
 - **Deep Learning & Computer Vision:**
-- [Remote Sensing]
-  - [Satellite and UAV image analysis: Counting target objects and estimating crowd densities in the Frequency domain]
+- [Remote Sensing, Satellite and UAV image analysis: Counting target objects and estimating crowd densities](#remote-sensing-satellite-and-uav-image-analysis-counting-target-objects-and-estimating-crowd-densities)
+  - [Satellite and UAV image analysis: Counting target objects and estimating crowd densities]
   - [Hyperspectral data: Semi-supervised segmentation] 
 - [Vehicle and pedestrian crowd analysis and density estimation](#road-scene-analysis-using-deep-learning-and-computer-vision)
   - [Reducing false-positives and localizing more than 2 objects](#reducing-false-positives-and-localizing-more-than-2-objects-current-research) (Current research)
@@ -32,6 +32,11 @@ Python - C - C++ - Java - MATLAB - OMNeT++ - Proteus - Verilog
   
 - **Networks:**
 - [5G network performance and QoE estimation using machine learning](#estimating-video-streaming-qoe-in-the-5g-networks)
+
+
+## Remote sensing, Satellite and UAV image analysis: Counting target objects and estimating crowd densities
+This section includes my research work in the area of computer vision and image processing employing remote sensing data; such as images captured by satellites and UAVs. It also includes my work with hyperspectral data.
+
 
 ## Road scene analysis using deep learning and computer vision
 
