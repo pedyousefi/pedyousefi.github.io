@@ -17,13 +17,15 @@ Python - C - C++ - Java - MATLAB - OMNeT++ - Proteus - Verilog
 # Research
 
 - **Deep Learning & Computer Vision:** [Vehicle and pedestrian crowd analysis and density estimation](#road-scene-analysis-using-deep-learning-and-computer-vision)
-  - [Single frame crowd counting and estimation (Spatial domain)](#single-frame-crowd-counting-and-estimation-spatial-domain)
-  - [CNN Network kernel modifications](#cnn-network-kernel-modifications)
-  - [WAYMO cars dataset categorization and adaptation](#waymo-cars-dataset-categorization-and-adaptation)
-  - [Video-based road scene analysis (Temporal domain)](#video-based-road-scene-analysis-temporal-domain)
-  - [Increasing network performance using transfer learning](#increasing-network-performance-using-transfer-learning)
-  - [Estimating and localizing both vehicles and pedestrians (Multi-object)](#estimating-and-localizing-both-vehicles-and-pedestrians-multi-object)
   - [Reducing false-positives and localizing more than 2 objects](#reducing-false-positives-and-localizing-more-than-2-objects-current-research) (Current research)
+  - [Estimating and localizing both vehicles and pedestrians (Multi-object)](#estimating-and-localizing-both-vehicles-and-pedestrians-multi-object)
+  - [Increasing network performance using transfer learning](#increasing-network-performance-using-transfer-learning)
+  - [Video-based road scene analysis (Temporal domain)](#video-based-road-scene-analysis-temporal-domain)
+  - [WAYMO cars dataset categorization and adaptation](#waymo-cars-dataset-categorization-and-adaptation)
+  - [CNN Network kernel modifications](#cnn-network-kernel-modifications)
+  - [Single frame crowd counting and estimation (Spatial domain)](#single-frame-crowd-counting-and-estimation-spatial-domain)
+  
+  
 - **Networks:** [5G network performance and QoE estimation using machine learning](#estimating-video-streaming-qoe-in-the-5g-networks)
 
 ## Road scene analysis using deep learning and computer vision
