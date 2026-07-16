@@ -18,7 +18,7 @@ Python - C - C++ - Java - MATLAB - OMNeT++ - Proteus - Verilog
 
 - **Deep Learning & Computer Vision:**
 - [Remote Sensing, Satellite and UAV image analysis: Counting target objects and estimating crowd densities](#remote-sensing-satellite-and-uav-image-analysis-counting-target-objects-and-estimating-crowd-densities) 
-  - [Frequency-domain based object detection](#frequency-domain-based-object-detectioin) (Current research)
+  - [Frequency-domain based object detection using Fourier transform](#frequency-domain-based-object-detectioin-using-fourier-transform) (Current research)
   - [Improving CSRNet and adapting it to remote sensing datasets](#improving-csrnet-and-adapting-it-to-remote-sensing-datasets)
   - [Hyperspectral data: Semi-supervised segmentation](#hyperspectral-data-semi-supervised-segmentation)
 - [Vehicle and pedestrian crowd analysis and density estimation](#road-scene-analysis-using-deep-learning-and-computer-vision)
@@ -38,7 +38,12 @@ Python - C - C++ - Java - MATLAB - OMNeT++ - Proteus - Verilog
 ## Remote sensing, Satellite and UAV image analysis: Counting target objects and estimating crowd densities
 This section includes my research work in the area of computer vision and image processing employing remote sensing data; such as images captured by satellites and UAVs. It also includes my work with hyperspectral data.
 
-### Frequency-domain based object detection (Current research)
+### Frequency-domain based object detection using Fourier transform (Current research)
+This project involves working with the Freq-Net, which is a CNN-based crowd counting network originally developed for people crowd counting; however, I attempted to adapt the network to the area of remote sensing data by training the network from scratch using RSOC and VisDrone-DET datasets. Realizing the capabilities of the network in this area, I am currently working on it to further improve its performance by modifying the network architecture, and I have recently been able to increase the number of objects processed at each iteration, meaning the network is able to perform "Multi-class object counting" in the frequency domain. To do so, the network transforms input data (frames) into frequency domain using Fourier transform (employing characteristic function). Proposed multi-class characteristic loss function and also samples of transformed data are included here.
+
+![perf](/assets/freq_formula.JPG)
+![perf](/assets/freq_samp_1.JPG)
+![perf](/assets/freq_samp_2.JPG)
 
 ### Improving CSRNet and adapting it to remote sensing datasets
 Enhacing and modifying the simple [CSRNet](https://openaccess.thecvf.com/content_cvpr_2018/html/Li_CSRNet_Dilated_Convolutional_CVPR_2018_paper.html) which is a CNN-based network by adding scale-aware and attention modules to the network architecture to further improve its performance. The scale-aware module includes 3 dilated convolutional layers, and the attention module comprises both channel attention and spatial attention. Table shown below demonstrates the difference between the modified network architecture and the baseline CSRNet. This modification increased the number of learnable parameters from approximately 16 million parameters, to 21 million parameters. This modification resulted in an improved performance on remote sensing datasets RSOC and VisDrone-DET. Network performance on RSOC satellite data for object detection can be seen below.
