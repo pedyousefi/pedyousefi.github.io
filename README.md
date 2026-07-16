@@ -42,7 +42,7 @@ This section includes my research work in the area of computer vision and image 
 This project involves working with the [Freq-Net](https://ieeexplore.ieee.org/document/9879332), which is a CNN-based crowd counting network originally developed for people crowd counting; however, I attempted to adapt the network to the area of remote sensing data by training the network from scratch using RSOC and VisDrone-DET datasets. Realizing the capabilities of the network in this area, I am currently working on it to further improve its performance by modifying the network architecture, and I have recently been able to increase the number of objects processed at each iteration, meaning the network is able to perform "Multi-class object counting" in the frequency domain. To do so, the network transforms input data (frames) into frequency domain using Fourier transform (employing characteristic function). Proposed multi-class characteristic loss function and also samples of transformed data are included here.
 
 ![perf](/assets/freq_formula.JPG)
-![perf](/assets/freq_samp_1.png)
+![perf](/assets/freq_samp_3.png)
 ![perf](/assets/freq_samp_2.png)
 
 ### Improving CSRNet and adapting it to remote sensing datasets
