@@ -18,7 +18,7 @@ Python - C - C++ - Java - MATLAB - OMNeT++ - Proteus - Verilog
 
 - **Deep Learning & Computer Vision:**
 - [Remote Sensing]
-  - [Satellite and UAV image analysis: Counting target objects and estimating crowd densities]
+  - [Satellite and UAV image analysis: Counting target objects and estimating crowd densities in the Frequency domain]
   - [Hyperspectral data: Semi-supervised segmentation] 
 - [Vehicle and pedestrian crowd analysis and density estimation](#road-scene-analysis-using-deep-learning-and-computer-vision)
   - [Reducing false-positives and localizing more than 2 objects](#reducing-false-positives-and-localizing-more-than-2-objects-current-research) (Current research)
