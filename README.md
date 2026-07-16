@@ -17,6 +17,9 @@ Python - C - C++ - Java - MATLAB - OMNeT++ - Proteus - Verilog
 # Research
 
 - **Deep Learning & Computer Vision:**
+- [Remote Sensing]
+  - [Satellite and UAV image analysis]
+  - [Hyperspectral data] 
 - [Vehicle and pedestrian crowd analysis and density estimation](#road-scene-analysis-using-deep-learning-and-computer-vision)
   - [Reducing false-positives and localizing more than 2 objects](#reducing-false-positives-and-localizing-more-than-2-objects-current-research) (Current research)
   - [Estimating and localizing both vehicles and pedestrians (Multi-object)](#estimating-and-localizing-both-vehicles-and-pedestrians-multi-object)
