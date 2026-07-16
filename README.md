@@ -17,11 +17,12 @@ Python - C - C++ - Java - MATLAB - OMNeT++ - Proteus - Verilog
 # Research
 
 - **Deep Learning & Computer Vision:**
-- [Remote Sensing, Satellite and UAV image analysis: Counting target objects and estimating crowd densities](#remote-sensing-satellite-and-uav-image-analysis-counting-target-objects-and-estimating-crowd-densities)
-  - [Satellite and UAV image analysis: Counting target objects and estimating crowd densities]
+- [Remote Sensing, Satellite and UAV image analysis: Counting target objects and estimating crowd densities](#remote-sensing-satellite-and-uav-image-analysis-counting-target-objects-and-estimating-crowd-densities) 
+  - [Frequency-domain based object detection] (Current research)
+  - [Improving CSRNet and adapting it to remote sensing datasets]
   - [Hyperspectral data: Semi-supervised segmentation] 
 - [Vehicle and pedestrian crowd analysis and density estimation](#road-scene-analysis-using-deep-learning-and-computer-vision)
-  - [Reducing false-positives and localizing more than 2 objects](#reducing-false-positives-and-localizing-more-than-2-objects-current-research) (Current research)
+  - [Reducing false-positives and localizing more than 2 objects](#reducing-false-positives-and-localizing-more-than-2-objects-current-research)
   - [Estimating and localizing both vehicles and pedestrians (Multi-object)](#estimating-and-localizing-both-vehicles-and-pedestrians-multi-object)
   - [Increasing network performance using transfer learning](#increasing-network-performance-using-transfer-learning)
   - [Video-based road scene analysis (Temporal domain)](#video-based-road-scene-analysis-temporal-domain) 
@@ -36,6 +37,12 @@ Python - C - C++ - Java - MATLAB - OMNeT++ - Proteus - Verilog
 
 ## Remote sensing, Satellite and UAV image analysis: Counting target objects and estimating crowd densities
 This section includes my research work in the area of computer vision and image processing employing remote sensing data; such as images captured by satellites and UAVs. It also includes my work with hyperspectral data.
+
+### Frequency-domain based object detection (Current research)
+
+### Improving CSRNet and adapting it to remote sensing datasets
+
+### Hyperspectral data: Semi-supervised segmentation
 
 
 ## Road scene analysis using deep learning and computer vision
