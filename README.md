@@ -18,8 +18,8 @@ Python - C - C++ - Java - MATLAB - OMNeT++ - Proteus - Verilog
 
 - **Deep Learning & Computer Vision:**
 - [Remote Sensing]
-  - [Satellite and UAV image analysis]
-  - [Hyperspectral data] 
+  - [Satellite and UAV image analysis: Counting target objects and estimating crowd densities]
+  - [Hyperspectral data: Semi-supervised segmentation] 
 - [Vehicle and pedestrian crowd analysis and density estimation](#road-scene-analysis-using-deep-learning-and-computer-vision)
   - [Reducing false-positives and localizing more than 2 objects](#reducing-false-positives-and-localizing-more-than-2-objects-current-research) (Current research)
   - [Estimating and localizing both vehicles and pedestrians (Multi-object)](#estimating-and-localizing-both-vehicles-and-pedestrians-multi-object)
@@ -41,40 +41,23 @@ as crowd analysis. In this process the network passes each input frame through c
 
 ![perf](/assets/perf_example.PNG)
 
-### Single frame crowd counting and estimation (Spatial domain)
+### Reducing false-positives and localizing more than 2 objects (Current research)
 
-My initial experience with CNN-based crowd counting networks relates to a term project I done for the statistical pattern recognition course during my masters’ degree. In that term project I worked with the famous CSRnet deep neural network which was state of the art at the time, after that due to my self interest in that area, I focused on the CANnet, which is a scale-aware neural net, to further familiarize myself with the workings of these networks, I trained multiple models using datasets such as ShanghaiTech, FDST, Venice, JHU-Crowds, UCSD and etc, which all are people crowd counting datasets. Understanding the abilities of CANnet, I implemented the [TRANCOS](https://gram.web.uah.es/data/datasets/trancos/index.html) cars dataset, which provides highway CCTV frames, using this dataset to count and estimate numbers of cars within each scene, reaching to a MAE error rate of 2.82. Image below shows the CANnet architecture, which depicts the VGG-16 layers at the front-end and the convolutional layers at the back-end, and the contextual scale-aware module in the middle. 
+Based on the promising results seen in the case of 2-object crowd estimation, a third target object was added to the list of objects the network is trained on for the purpose of density estimation. The third object is "Bicycle", which can be seen in various WAYMO images. Parallel to this, we are currently trying to add more WAYMO segments to the pool of selected video sequences used in training and testing. Also, to decrease the error rate even more, augmentation techniques are being employed to further increase the network accuracy.
 
-![can_arch](/assets/can_detail_1.PNG)
+![can2_over](/assets/can2_over.PNG)
 
-The contextual module is responsible for processing extracted VGG features at different scales and finding the saliency details in each input image. As can be seen in figure below, the feature goes through a process of pooling, upsampling and sigmoid operations.
+### Estimating and localizing both vehicles and pedestrians (Multi-object)
 
-![can_mods](/assets/can_detail_2.PNG)
+In real-life scenarios, specifically in the environment surrounding a vehicle in the road, specially in front of the car, obstacles and objects and other than vehicles can be seen, most important one of those objects are pedestrians, which is the most important object which a driver has to be cautious about; therefore, another aspect of this study was introduced which combines the detection and estimation of the vehicles and pedestrians crowds within a scene. Due to the fact that most WAYMO scenes include both object types, we generated groun-truth density maps including both of these target onjects and prompted to train the network from scratch using frames that showcased these objects. Images below depict the network performance when tested on input frames. It can be seen that the network is able to successfully detect and estimate the target objects' whitin the scene as was desired.
 
-The contextual features then are passed to the back-end of the network where the each feature is passed through convolutional layers which at the end a density map whith dots representing center point of each target object is generated. This process is shown in the image below.
+![can2_2obj](/assets/can2_2obj.PNG)
 
-![can_convs](/assets/can_detail_3.PNG)
+### Increasing network performance using transfer learning
 
+To further decrease the CANnet2s network error rate, a transfer-learning method was implemented, using a pre-trained TRANCOS model as the base for training the network with WAYMO data. As a result, model was improved and the accuracy of the network was enhances. Image below shows a visualization of this improvement based on the network performance on a "Blurry" WAYMO scene, presenting a foggy environment with cars on the road creating a highly occluded scene; however, as it can be seen, MAE error rate of the network is decreased from 8.14 before transfer learning, to MAE value of 0.14 after transfer-learning.
 
-### CNN Network kernel modifications
-
-The MAE error rate showed by CANnet on TRANCOS test set showed that this network is not able to successfully locate and estimate the number of all vehicles present at the images, therefore a modification was applied to the network kernels, specifically kernels with different scales belonging to the contextual module. Image below demonstrates these changes.
-
-![can_kernels](/assets/can_kernels.PNG)
-
-After this modification, CANnet was once again tested on the TRANCOS data, this time however, with the new kernel sizes the network was able to demonstrate impressive MAE error rate of 2.1. Figure below shows the visual network performance after this modification.
-
-![can_tranctest](/assets/can_trantest.PNG)
-
-### WAYMO cars dataset categorization and adaptation
-
-Due to limitations of the TRANCOS dataset such as image resolution and quality, camera point-of-view, limited number of training and test images, and due to the fact that this dataset was not originally developed for the usage in projects with the purpose of autonomous vehicles as the target domain, we turned our focus to the comprehensive [WAYMO](https://waymo.com/open/) cars dataset, which provides video sequences of onboard autonomous vehicle road images, captured using LiDAR equipment and provides 360 degree scene environment. In order to adapt the crowd counting networks to the domain of autonomous vehicles, we implemented the video-based counterpart of the CAnnet, CANnet2s, which is capable of estimating the flow of objects within frame pairs and is able to generate flow maps as well as scene density map and estimate the number of object within a scene. Samples of input frames from WAYMO dataset used by these neural networks are presented in figure below.
-
-![waymo_frames](/assets/waymo_frames.PNG)
-
-For this purpose we went through all the available WAYMO segments, and extracted "Front camera" frames. Totalling more thatn 140 segments and 28000 frames. One-third of this number of frames were used for the training and the remaining were used for testing of both CANnet and CANnet2s. Furthermore, to better understand the content of the WAYMO images and to better evaluate the performance of networks under various scenes we labeled each segment of the dataset in 7 different general categories, as "Bright", "Dark", "Occlusion", "Pose change", "Low density", "Blurry", and "Multi-scale". Examples of labled WAYMO input frames can be seen below.
-
-![waymo_cat](/assets/waymo_cat.PNG)
+![can_tlearn](/assets/can_tlearn.PNG)
 
 ### Video-based road scene analysis (Temporal domain)
 
@@ -98,24 +81,41 @@ Image below visualizes the CANnet2s performance on one of the most challenging W
 
 ![can2_night](/assets/can2_night.PNG)
 
-### Increasing network performance using transfer learning
+### WAYMO cars dataset categorization and adaptation
 
-To further decrease the CANnet2s network error rate, a transfer-learning method was implemented, using a pre-trained TRANCOS model as the base for training the network with WAYMO data. As a result, model was improved and the accuracy of the network was enhances. Image below shows a visualization of this improvement based on the network performance on a "Blurry" WAYMO scene, presenting a foggy environment with cars on the road creating a highly occluded scene; however, as it can be seen, MAE error rate of the network is decreased from 8.14 before transfer learning, to MAE value of 0.14 after transfer-learning.
+Due to limitations of the TRANCOS dataset such as image resolution and quality, camera point-of-view, limited number of training and test images, and due to the fact that this dataset was not originally developed for the usage in projects with the purpose of autonomous vehicles as the target domain, we turned our focus to the comprehensive [WAYMO](https://waymo.com/open/) cars dataset, which provides video sequences of onboard autonomous vehicle road images, captured using LiDAR equipment and provides 360 degree scene environment. In order to adapt the crowd counting networks to the domain of autonomous vehicles, we implemented the video-based counterpart of the CAnnet, CANnet2s, which is capable of estimating the flow of objects within frame pairs and is able to generate flow maps as well as scene density map and estimate the number of object within a scene. Samples of input frames from WAYMO dataset used by these neural networks are presented in figure below.
 
-![can_tlearn](/assets/can_tlearn.PNG)
+![waymo_frames](/assets/waymo_frames.PNG)
+
+For this purpose we went through all the available WAYMO segments, and extracted "Front camera" frames. Totalling more thatn 140 segments and 28000 frames. One-third of this number of frames were used for the training and the remaining were used for testing of both CANnet and CANnet2s. Furthermore, to better understand the content of the WAYMO images and to better evaluate the performance of networks under various scenes we labeled each segment of the dataset in 7 different general categories, as "Bright", "Dark", "Occlusion", "Pose change", "Low density", "Blurry", and "Multi-scale". Examples of labled WAYMO input frames can be seen below.
+
+![waymo_cat](/assets/waymo_cat.PNG)
+
+### CNN Network kernel modifications
+
+The MAE error rate showed by CANnet on TRANCOS test set showed that this network is not able to successfully locate and estimate the number of all vehicles present at the images, therefore a modification was applied to the network kernels, specifically kernels with different scales belonging to the contextual module. Image below demonstrates these changes.
+
+![can_kernels](/assets/can_kernels.PNG)
+
+After this modification, CANnet was once again tested on the TRANCOS data, this time however, with the new kernel sizes the network was able to demonstrate impressive MAE error rate of 2.1. Figure below shows the visual network performance after this modification.
+
+![can_tranctest](/assets/can_trantest.PNG)
 
 
-### Estimating and localizing both vehicles and pedestrians (Multi-object)
+### Single frame crowd counting and estimation (Spatial domain)
 
-In real-life scenarios, specifically in the environment surrounding a vehicle in the road, specially in front of the car, obstacles and objects and other than vehicles can be seen, most important one of those objects are pedestrians, which is the most important object which a driver has to be cautious about; therefore, another aspect of this study was introduced which combines the detection and estimation of the vehicles and pedestrians crowds within a scene. Due to the fact that most WAYMO scenes include both object types, we generated groun-truth density maps including both of these target onjects and prompted to train the network from scratch using frames that showcased these objects. Images below depict the network performance when tested on input frames. It can be seen that the network is able to successfully detect and estimate the target objects' whitin the scene as was desired.
+My initial experience with CNN-based crowd counting networks relates to a term project I done for the statistical pattern recognition course during my masters’ degree. In that term project I worked with the famous CSRnet deep neural network which was state of the art at the time, after that due to my self interest in that area, I focused on the CANnet, which is a scale-aware neural net, to further familiarize myself with the workings of these networks, I trained multiple models using datasets such as ShanghaiTech, FDST, Venice, JHU-Crowds, UCSD and etc, which all are people crowd counting datasets. Understanding the abilities of CANnet, I implemented the [TRANCOS](https://gram.web.uah.es/data/datasets/trancos/index.html) cars dataset, which provides highway CCTV frames, using this dataset to count and estimate numbers of cars within each scene, reaching to a MAE error rate of 2.82. Image below shows the CANnet architecture, which depicts the VGG-16 layers at the front-end and the convolutional layers at the back-end, and the contextual scale-aware module in the middle. 
 
-![can2_2obj](/assets/can2_2obj.PNG)
+![can_arch](/assets/can_detail_1.PNG)
 
-### Reducing false-positives and localizing more than 2 objects (Current research)
+The contextual module is responsible for processing extracted VGG features at different scales and finding the saliency details in each input image. As can be seen in figure below, the feature goes through a process of pooling, upsampling and sigmoid operations.
 
-Based on the promising results seen in the case of 2-object crowd estimation, a third target object was added to the list of objects the network is trained on for the purpose of density estimation. The third object is "Bicycle", which can be seen in various WAYMO images. Parallel to this, we are currently trying to add more WAYMO segments to the pool of selected video sequences used in training and testing. Also, to decrease the error rate even more, augmentation techniques are being employed to further increase the network accuracy.
+![can_mods](/assets/can_detail_2.PNG)
 
-![can2_over](/assets/can2_over.PNG)
+The contextual features then are passed to the back-end of the network where the each feature is passed through convolutional layers which at the end a density map whith dots representing center point of each target object is generated. This process is shown in the image below.
+
+![can_convs](/assets/can_detail_3.PNG)
+
 
 ## Estimating Video Streaming QoE in the 5G networks\*
 
@@ -138,9 +138,11 @@ management course during my masters degree. Network presented in the figure and 
 
 # Publications
 
-* Yousefi, Pedram. **"Crowd Localization and Counting via Deep Flow Maps."** *M.S. thesis, Istanbul Technical University, July 2024*.
+* Pedram Yousefi, Bilge Günsel. **"Multi-category Crowd Analysis for Autonomous Driving."** in *2025 33rd Signal Processing and Communications Applications Conference (SIU)*, 1-4. IEEE, 2025. [official link](https://ieeexplore.ieee.org/abstract/document/11111807/)
 
-* Yousefi, Pedram, Bilge Gunsel, and Yusuf Kagan Hanoglu. **"Vehicle Crowd Density Estimation Enhanced by Video Flow Maps."** In *2023 14th International Conference on Electrical and Electronics Engineering (ELECO)*, 1–5. IEEE, 2023. [official link](http://www.eleco.org.tr/ELECO2023/eleco2023-papers/103.pdf)
+* Pedram Yousefi. **"Crowd Localization and Counting via Deep Flow Maps."** *M.S. thesis, Istanbul Technical University, July 2024*.
+
+* Pedram Yousefi, Bilge Günsel, and Yusuf Kagan Hanoglu. **"Vehicle Crowd Density Estimation Enhanced by Video Flow Maps."** In *2023 14th International Conference on Electrical and Electronics Engineering (ELECO)*, 1–5. IEEE, 2023. [official link](http://www.eleco.org.tr/ELECO2023/eleco2023-papers/103.pdf)
 
 
 # Test Score
